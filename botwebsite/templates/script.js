@@ -1,14 +1,15 @@
 <script>
-    var append_increment = 0;
     setInterval(function() {
         $.ajax({
             type: "GET",
-            url: {% url 'display_updated_position' %},  // URL to your view that serves new info
-            data: {'append_increment': append_increment}
+            url: '/position_raw.html',  // URL to your view that serves new info
         })
         .done(function(response) {
-            $('#_appendHere').append(response);
-            append_increment += 10;
+            var positions = response.split('\n');
+            for (var i=1; i<=5; i++) {
+              var target = document.getElementById('pos' + i);
+              target.innerHTML = positions[i-1];
+            }
         });
-    }, 10000)
+    }, 1000)
 </script>
