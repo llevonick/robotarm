@@ -1,14 +1,16 @@
 {% load staticfiles %}
 
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
     <script src="{% static 'robotcontrol/jquery/jquery-3.1.1.js' %}"></script>
     <script src="{% static 'robotcontrol/bootstrap/dist/js/bootstrap.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'robotcontrol/bootstrap/dist/css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'robotcontrol/css/stylesheet.css' %}" />
 </head>
 
 
 {% block content %}
-<h1>Welcome to</h1>
+<h1>WELCOME TO</h1>
 <h1>BOSS THAT ROBOT ARM AROUND!</h1>
-<a class = "btn btn-default" href = '/positions'>Click here to be the boss</a>
+<a type="button" class="btn btn-primary btn-lg raised" href = '/positions'>Click here to be the boss</a>
 {% endblock %}
