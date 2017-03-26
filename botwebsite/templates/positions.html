@@ -7,13 +7,19 @@
     <link rel="stylesheet" type="text/css" href="{% static 'robotcontrol/bootstrap/dist/css/bootstrap.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'robotcontrol/css/stylesheet.css' %}" />
     <script type = "text/javascript" src = "{% static 'robotcontrol/js/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'robotcontrol/js/servoSliders.js' %}"></script>
 </head>
 
 {% block content %}
     <h2>BOSS THAT ROBOT ARM AROUND!</h2>
         <p id="pos1"> {{ robot.pos_1 }} </p>
+        <input id="pos1_slider" type="range" min="10" max="170" value="90" step="5" onchange="postSlider('1')"/>
         <p id="pos2"> {{ robot.pos_2 }} </p>
+        <input id="pos2_slider" type="range" min="10" max="170" value="90" step="5" onchange="postSlider('2')"/>
         <p id="pos3"> {{ robot.pos_3 }} </p>
+        <input id="pos3_slider" type="range" min="10" max="170" value="90" step="5" onchange="postSlider('3')"/>
         <p id="pos4"> {{ robot.pos_4 }} </p>
+        <input id="pos4_slider" type="range" min="10" max="170" value="90" step="5" onchange="postSlider('4')"/>
         <p id="pos5"> {{ robot.pos_5 }} </p>
+        <input id="pos5_slider" type="range" min="10" max="170" value="90" step="5" onchange="postSlider('5')"/>
 {% endblock %}
