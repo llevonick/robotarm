@@ -8,6 +8,8 @@ setInterval(function() {
         for (var i=1; i<=5; i++) {
              var target = document.getElementById('pos' + i);
              target.innerHTML = positions[i];
+             var slider = document.getElementById('pos' + i + '_slider');
+             slider.value = positions[i];
              console.log(positions);
         }
     });
