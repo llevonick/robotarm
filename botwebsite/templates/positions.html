@@ -11,14 +11,9 @@
 
 {% block content %}
     <h2>BOSS THAT ROBOT ARM AROUND!</h2>
-        {{ robot.pos_1 }}
-        <br></br>
-        {{ robot.pos_2 }}
-        <br></br>
-        {{ robot.pos_3 }}
-        <br></br>
-        {{ robot.pos_4 }}
-        <br></br>
-        {{ robot.pos_5 }}
-        <br></br>
+        <p id="pos1"> {{ robot.pos_1 }} </p>
+        <p id="pos2"> {{ robot.pos_2 }} </p>
+        <p id="pos3"> {{ robot.pos_3 }} </p>
+        <p id="pos4"> {{ robot.pos_4 }} </p>
+        <p id="pos5"> {{ robot.pos_5 }} </p>
 {% endblock %}
