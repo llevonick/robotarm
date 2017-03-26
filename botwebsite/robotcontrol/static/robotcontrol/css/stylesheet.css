@@ -1,8 +1,4 @@
-html{
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-}
+
 
 body{
     background-image: url(hexagons.jpg);
@@ -10,38 +6,36 @@ body{
     background-size: cover;
 }
 
+.homepage{
+    padding-top: 150;
+}
+
 h1{
     font-family: 'Passion One', cursive;
     font-style: bold;
     text-align: center;
     font-size: 50;
-
-    color: black;
+    text-shadow: 2px 2px 5px black;
+    color: white;
 }
 h2{
     font-family: 'Passion One', cursive;
     font-size: 50;
-    color: black;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 5px black;
 }
 
 
 .btn-primary.raised {
 	box-shadow: 0 3px 0 0 #007299;
     font-family: 'Passion One', cursive;
+    text-shadow: 2px 2px 5px black;
     font-size: 25;
     text-align: center;
     display: block;
     width: 350;
     margin: auto;
-    padding-right: 50;
-    padding-left: 50;
-    background: -moz-linear-gradient(top,  #B4DBC0 50%, #CD5360 50%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#B37D4E), color-stop(50%,#CD5360cc)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #B37D4E 50%,#CD5360 50%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #B37D4E 50%,#CD5360 50%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #B37D4E 50%,#CD5360 50%); /* IE10+ */
-	background: linear-gradient(to bottom,  #B37D4E 50%,#CD5360 50%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#B37D4E', endColorstr='#CD5360',GradientType=0 );
 }
 
 .btn-primary.raised:active, .btn-primary.raised.active {
