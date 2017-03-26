@@ -30,6 +30,14 @@ def display_positions(request):
         context={'robot': position}
     )
 
+def raw_positions(request):
+    position = get_positions(request)
+    return render(
+        request,
+        'position_raw.html',
+        context={'robot': position}
+    )
+
 
 def update_positions(request, new_p1, new_p2, new_p3, new_p4, new_p5):
     postion = get_positions(request)
