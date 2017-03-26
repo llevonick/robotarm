@@ -8,18 +8,59 @@
     <link rel="stylesheet" type="text/css" href="{% static 'robotcontrol/css/stylesheet.css' %}" />
     <script type = "text/javascript" src = "{% static 'robotcontrol/js/script.js' %}"></script>
     <script type="text/javascript" src="{% static 'robotcontrol/js/servoSliders.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 {% block content %}
     <h2>BOSS THAT ROBOT ARM AROUND!</h2>
-        <p id="pos1"> {{ robot.pos_1 }} </p>
+    <div class = "blocked">
+        <div class = "header">
+            <p class = "type">Rotation Angle:</p>
+            <p id="pos1"> {{ robot.pos_1 }} </p>
+            <p class = "type">°</p>
+        </div>
+        <p class="movement">Clockwise</p>
         <input id="pos1_slider" type="range" min="10" max="170" value="90" step="5" onchange="postSlider('1')"/>
-        <p id="pos2"> {{ robot.pos_2 }} </p>
+        <p class="movement">Counter Clockwise</p>
+    </div>
+    <div class = "blocked">
+        <div class = "header">
+            <p class = "type">Claw Angle:</p>
+            <p id="pos2"> {{ robot.pos_2 }} </p>
+            <p class = "type">°</p>
+        </div>
+        <p class="movement">Claw Up</p>
         <input id="pos2_slider" type="range" min="10" max="170" value="90" step="5" onchange="postSlider('2')"/>
-        <p id="pos3"> {{ robot.pos_3 }} </p>
+        <p class="movement">Claw Down</p>
+    </div>
+    <div class = "blocked">
+        <div class = "header">
+            <p class = "type">Elbow Angle:</p>
+            <p id="pos3"> {{ robot.pos_3 }} </p>
+            <p class = "type">°</p>
+        </div>
+        <p class="movement">Elbow Up</p>
         <input id="pos3_slider" type="range" min="10" max="170" value="90" step="5" onchange="postSlider('3')"/>
-        <p id="pos4"> {{ robot.pos_4 }} </p>
-        <input id="pos4_slider" type="range" min="10" max="170" value="90" step="5" onchange="postSlider('4')"/>
-        <p id="pos5"> {{ robot.pos_5 }} </p>
+        <p class="movement">Elbow Down</p>
+    </div>
+    <div class = "blocked">
+        <div class = "header">
+            <p class = "type">Claw Grip Angle:</p>
+            <p id="pos4"> {{ robot.pos_4 }} </p>
+            <p class = "type">°</p>
+        </div>
+        <p class="movement">Claw Open</p>
+        <input id="pos4_slider" type="range" min="70" max="120" value="90" step="5" onchange="postSlider('4')"/>
+        <p class="movement">Claw Close</p>
+    </div>
+    <div class = "blocked">
+        <div class = "header">
+            <p class = "type">Lean Angle:</p>
+            <p id="pos5"> {{ robot.pos_5 }} </p>
+            <p class = "type">°</p>
+        </div>
+        <p class="movement">Forward</p>
         <input id="pos5_slider" type="range" min="10" max="170" value="90" step="5" onchange="postSlider('5')"/>
+        <p class="movement">Backward</p>
+    </div>
 {% endblock %}
