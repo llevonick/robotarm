@@ -52,7 +52,7 @@ def set_position(request):
 
     except Exception:
         return 'False'
-        
+
     return 'True'
 
 

@@ -1,9 +1,12 @@
-
+html{
+    color:white;
+}
 
 body{
     background-image: url(hexagons.jpg);
     margin: 0 auto;
     background-size: cover;
+    color:white;
 }
 
 .homepage{
