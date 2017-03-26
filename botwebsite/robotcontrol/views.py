@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 
 from models import Position
 import sqlite3
@@ -40,8 +40,8 @@ def raw_positions(request):
 
 def set_position(request):
     try:
-        servo = int(request.POST.get('servo', -1))
-        angle = int(request.POST.get('angle', -1))
+        servo = int(request.GET.get('servo', -1))
+        angle = int(request.GET.get('angle', -1))
         assert(0 <= int(servo) and int(servo) <= 5)
         assert(0 <= int(angle) and int(angle) <= 180)
 
@@ -51,9 +51,9 @@ def set_position(request):
         position.save(force_update=True)
 
     except Exception:
-        return 'False'
+        return HttpResponse('False')
 
-    return 'True'
+    return HttpResponse('True')
 
 
 
