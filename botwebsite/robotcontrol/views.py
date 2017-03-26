@@ -38,6 +38,24 @@ def raw_positions(request):
         context={'robot': position}
     )
 
+def set_position(request):
+    try:
+        servo = int(request.POST.get('servo', -1))
+        angle = int(request.POST.get('angle', -1))
+        assert(0 <= int(servo) and int(servo) <= 5)
+        assert(0 <= int(angle) and int(angle) <= 180)
+
+        position = Position.objects.get(pk=1)
+        servoProp = 'pos_' + str(servo)
+        setattr(position, servoProp, angle)
+        position.save(force_update=True)
+
+    except Exception:
+        return 'False'
+        
+    return 'True'
+
+
 
 def update_positions(request, new_p1, new_p2, new_p3, new_p4, new_p5):
     postion = get_positions(request)
