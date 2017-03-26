@@ -42,11 +42,11 @@ def set_position(request):
     try:
         servo = int(request.GET.get('servo', -1))
         angle = int(request.GET.get('angle', -1))
-        assert(0 <= int(servo) and int(servo) <= 5)
+        assert(0 <= int(servo) and int(servo) <= 4)
         assert(0 <= int(angle) and int(angle) <= 180)
 
         position = Position.objects.get(pk=1)
-        servoProp = 'pos_' + str(servo)
+        servoProp = 'pos_' + str(servo+1)
         setattr(position, servoProp, angle)
         position.save(force_update=True)
 
